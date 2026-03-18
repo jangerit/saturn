@@ -18,9 +18,10 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 if device == "cpu":
     from models.utils.mamba_cpu_blocks import Mamba, Block, RMSNorm, layer_norm_fn, rms_norm_fn
 else:
-    from mamba_ssm.modules.mamba_simple import Mamba, Block
+    from mamba_ssm.modules.mamba_simple import Mamba
+    from mamba_ssm.modules.block import Block
     try:
-        from mamba_ssm.ops.triton.layernorm import RMSNorm, layer_norm_fn, rms_norm_fn
+        from mamba_ssm.ops.triton.layer_norm import RMSNorm, layer_norm_fn, rms_norm_fn
     except ImportError:
         RMSNorm, layer_norm_fn, rms_norm_fn = None, None, None
 
