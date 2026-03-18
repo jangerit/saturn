@@ -107,6 +107,33 @@ def enumerated_mol_passes_property_filter(mol: Mol) -> bool:
             longest_aliphatic_c_chain(mol) < 3 and 
             passes_ring_filter(mol))
 
+def solvent_passes_property_filter(mol: Union[Mol, str]) -> bool:
+    """
+    Check if a molecule is solvent-like (MW 30-300, uncharged, ring-safe,
+    aliphatic chain ≤ 10). Used for building block enumeration filtering
+    when generating solvent candidates.
+    """
+    if isinstance(mol, str):
+        mol = Chem.MolFromSmiles(mol)
+    if mol is None:
+        return False
+
+    mw = CalcExactMolWt(mol)
+    if mw < 30 or mw > 300:
+        return False
+
+    if is_charged(mol):
+        return False
+
+    if not passes_ring_filter(mol):
+        return False
+
+    if longest_aliphatic_c_chain(mol) > 10:
+        return False
+
+    return True
+
+
 def are_solvable_by_retro(
     smiles: List[str], 
     config: Dict[str, str]

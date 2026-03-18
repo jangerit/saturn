@@ -1,0 +1,21 @@
+{
+    "running_mode": "distribution_learning",
+    "device": "cuda",
+    "seed": 42,
+    "model_architecture": "mamba",
+    "logging": {
+        "logging_path": "data/solvent_prior_training.log",
+        "model_checkpoints_dir": "data/solvent_prior_checkpoints/"
+    },
+    "distribution_learning": {
+        "parameters": {
+            "agent": "experimental_reproduction/checkpoint_models/zinc-250k-mamba-epoch-50.prior",
+            "training_steps": 50,
+            "batch_size": 128,
+            "learning_rate": 0.00005,
+            "training_dataset_path": "data/solvents.smi",
+            "train_with_randomization": true,
+            "transfer_learning": true
+        }
+    }
+}

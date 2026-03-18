@@ -39,28 +39,28 @@ from oracles.synthesizability.syntheseus import Syntheseus
 from oracles.synthesizability.freedom import Freedom
 
 # Docking
-from oracles.docking.dockstream import DockStream
-from oracles.docking.quickvina2_gpu import QuickVina2_GPU
-from oracles.docking.gnina import GNINA
+# from oracles.docking.dockstream import DockStream
+# from oracles.docking.quickvina2_gpu import QuickVina2_GPU
+# from oracles.docking.gnina import GNINA
 
-# xTB electronic properties
-from oracles.xtb.chemical_potential import ChemicalPotential
-from oracles.xtb.dipole import Dipole
-from oracles.xtb.electron_affinity import ElectronAffinity
-from oracles.xtb.electrophilicity_index import ElectrophilicityIndex
-from oracles.xtb.electrophilicity import Electrophilicity
-from oracles.xtb.hardness import Hardness
-from oracles.xtb.homo import HOMO
-from oracles.xtb.ionization_potential import IonizationPotential
-from oracles.xtb.lumo import LUMO
-from oracles.xtb.nucleophilicity_index import NucleophilicityIndex
-from oracles.xtb.nucleophilicity import Nucleophilicity
-from oracles.xtb.homo_lumo_gap import HOMOLUMOGap
-from oracles.xtb.molecular_dipole import MolecularDipole
+# # xTB electronic properties
+# from oracles.xtb.chemical_potential import ChemicalPotential
+# from oracles.xtb.dipole import Dipole
+# from oracles.xtb.electron_affinity import ElectronAffinity
+# from oracles.xtb.electrophilicity_index import ElectrophilicityIndex
+# from oracles.xtb.electrophilicity import Electrophilicity
+# from oracles.xtb.hardness import Hardness
+# from oracles.xtb.homo import HOMO
+# from oracles.xtb.ionization_potential import IonizationPotential
+# from oracles.xtb.lumo import LUMO
+# from oracles.xtb.nucleophilicity_index import NucleophilicityIndex
+# from oracles.xtb.nucleophilicity import Nucleophilicity
+# from oracles.xtb.homo_lumo_gap import HOMOLUMOGap
+# from oracles.xtb.molecular_dipole import MolecularDipole
 
-# GEAM's oracle
-from oracles.docking.geam_oracle import GEAMOracle
-from oracles.docking.quickvina2 import QuickVina2
+# # GEAM's oracle
+# from oracles.docking.geam_oracle import GEAMOracle
+# from oracles.docking.quickvina2 import QuickVina2
 
 
 def construct_oracle_component(oracle_component_parameters: OracleComponentParameters) -> OracleComponent:
@@ -123,44 +123,44 @@ def construct_oracle_component(oracle_component_parameters: OracleComponentParam
     elif name == "freedom":
         return Freedom(oracle_component_parameters)
     # Docking
-    elif name == "dockstream":
-        return DockStream(oracle_component_parameters)
-    elif name == "quickvina2_gpu":
-        return QuickVina2_GPU(oracle_component_parameters)
-    elif name == "gnina":
-        return GNINA(oracle_component_parameters)
-    # xTB electronic properties
-    elif name == "chemical_potential":
-        return ChemicalPotential(oracle_component_parameters)
-    elif name == "dipole":
-        return Dipole(oracle_component_parameters)
-    elif name == "electron_affinity":
-        return ElectronAffinity(oracle_component_parameters)
-    elif name == "electrophilicity_index":
-        return ElectrophilicityIndex(oracle_component_parameters)
-    elif name == "electrophilicity":
-        return Electrophilicity(oracle_component_parameters)
-    elif name == "hardness":
-        return Hardness(oracle_component_parameters)
-    elif name == "homo":
-        return HOMO(oracle_component_parameters)
-    elif name == "ionization_potential":
-        return IonizationPotential(oracle_component_parameters)
-    elif name == "lumo":
-        return LUMO(oracle_component_parameters) 
-    elif name == "nucleophilicity_index":
-        return NucleophilicityIndex(oracle_component_parameters)
-    elif name == "nucleophilicity":
-        return Nucleophilicity(oracle_component_parameters)
-    elif name == "homo_lumo_gap":
-        return HOMOLUMOGap(oracle_component_parameters)
-    elif name == "molecular_dipole":
-        return MolecularDipole(oracle_component_parameters)
-    # GEAM's oracle
-    elif name == "geam":
-        return GEAMOracle(oracle_component_parameters)
-    elif name == "quickvina2":
-        return QuickVina2(oracle_component_parameters)
+    # elif name == "dockstream":
+    #     return DockStream(oracle_component_parameters)
+    # elif name == "quickvina2_gpu":
+    #     return QuickVina2_GPU(oracle_component_parameters)
+    # elif name == "gnina":
+    #     return GNINA(oracle_component_parameters)
+    # # xTB electronic properties
+    # elif name == "chemical_potential":
+    #     return ChemicalPotential(oracle_component_parameters)
+    # elif name == "dipole":
+    #     return Dipole(oracle_component_parameters)
+    # elif name == "electron_affinity":
+    #     return ElectronAffinity(oracle_component_parameters)
+    # elif name == "electrophilicity_index":
+    #     return ElectrophilicityIndex(oracle_component_parameters)
+    # elif name == "electrophilicity":
+    #     return Electrophilicity(oracle_component_parameters)
+    # elif name == "hardness":
+    #     return Hardness(oracle_component_parameters)
+    # elif name == "homo":
+    #     return HOMO(oracle_component_parameters)
+    # elif name == "ionization_potential":
+    #     return IonizationPotential(oracle_component_parameters)
+    # elif name == "lumo":
+    #     return LUMO(oracle_component_parameters) 
+    # elif name == "nucleophilicity_index":
+    #     return NucleophilicityIndex(oracle_component_parameters)
+    # elif name == "nucleophilicity":
+    #     return Nucleophilicity(oracle_component_parameters)
+    # elif name == "homo_lumo_gap":
+    #     return HOMOLUMOGap(oracle_component_parameters)
+    # elif name == "molecular_dipole":
+    #     return MolecularDipole(oracle_component_parameters)
+    # # GEAM's oracle
+    # elif name == "geam":
+    #     return GEAMOracle(oracle_component_parameters)
+    # elif name == "quickvina2":
+    #     return QuickVina2(oracle_component_parameters)
     # TODO: Pharmacophore and Shape Match
     # TODO: MD
     else:

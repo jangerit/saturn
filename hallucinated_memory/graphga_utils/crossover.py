@@ -66,7 +66,7 @@ def ring_ok(mol):
 def mol_ok(mol):
     try:
         Chem.SanitizeMol(mol)
-        if 15 < mol.GetNumAtoms() < 40:
+        if 2 < mol.GetNumAtoms() < 25:
             return True
         else:
             return False

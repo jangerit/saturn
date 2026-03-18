@@ -71,9 +71,9 @@ class Generator:
         :return: SMILES generator model instance
         """
         if torch.cuda.is_available():
-            save_dict = torch.load(model_path)
+            save_dict = torch.load(model_path, weights_only=False)
         else:
-            save_dict = torch.load(model_path, map_location=lambda storage, loc: storage)
+            save_dict = torch.load(model_path, map_location=lambda storage, loc: storage, weights_only=False)
 
         network_params = save_dict.get("network_params", {})
         model = Generator(
